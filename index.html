@@ -5,6 +5,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: #007bec;
+            color: aliceblue;
+            padding: 30px;
+            font-size: 1.2rem;
+        }
+
+        input {
+            border-radius: 7px;
+            padding: 5px;
+        }
+
+        .form-element {
+            display: inline-block;
+            margin: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            padding: 7px 10px;
+            text-decoration: none;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <form>
@@ -27,14 +56,23 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script type="text/babel">
-
-        function HelloWorld(){
-            return <div> Hello world! </div>;
+         
+        function SignInForm(){
+            return  <form>
+                        <div className="form-element">
+                            <label htmlfor="username">username</label>
+                            <input type="text" id="username" />
+                        </div>
+                        <div className="form-element">
+                            <label htmlfor="password">password</label>
+                            <input type="text" id="password" />
+                        </div>
+                        <button type="submit">submit</button>
+                    </form>
         }
+        
 
-        // const element = <HelloWorld />
-
-        ReactDOM.render(<HelloWorld />, document.getElementById('root'));
+        ReactDOM.render(<SignInForm />, document.getElementById('root'));
 
     </script>
 </body>
