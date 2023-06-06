@@ -36,17 +36,6 @@
     </style>
 </head>
 <body>
-    <form>
-        <div class="form-element">
-            <label for="username">username</label>
-            <input type="text" id="username">
-        </div>
-        <div class="form-element">
-            <label for="password">password</label>
-            <input type="text" id="password">
-        </div>
-        <button type="submit">submit</button>
-    </form>
 
     <div id="root"></div>
     
@@ -56,18 +45,30 @@
     <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 
     <script type="text/babel">
+
+        function Username(){
+            return <div className="form-element">
+                        <label htmlFor="username">username</label>
+                        <input type="text" id="username" />
+                    </div>
+        }
+
+        function Password(){
+            return  <div className="form-element">
+                        <label htmlFor="password">password</label>
+                        <input type="text" id="password" />
+                    </div>
+        }
+
+        function Button(){
+            return <button type="submit">submit</button>
+        }
          
         function SignInForm(){
             return  <form>
-                        <div className="form-element">
-                            <label htmlfor="username">username</label>
-                            <input type="text" id="username" />
-                        </div>
-                        <div className="form-element">
-                            <label htmlfor="password">password</label>
-                            <input type="text" id="password" />
-                        </div>
-                        <button type="submit">submit</button>
+                        <Username />
+                        <Password />
+                        <Button />
                     </form>
         }
         
